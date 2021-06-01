@@ -1,0 +1,129 @@
+.container {
+  margin: 40px auto;
+  padding: 40px 40px 10px 40px;
+  max-width: 1000px;
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254) 74.6%
+  );
+  font-family: "PT Serif", serif;
+  font-weight: 500;
+  color: #3e3245;
+}
+
+.city-search {
+  border: 3px #362999 solid;
+  margin-bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.enter-search {
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #362999;
+  background: transparent;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  margin: 30px 0 15px 0;
+  background: #362999;
+  padding: 10px 20px;
+  font-size: 17px;
+}
+
+.city-temp {
+  border: 3px #362999 solid;
+  text-align: center;
+  border-radius: 80px;
+  margin-bottom: 80px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 27px;
+}
+
+.temp-now {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.units {
+  font-size: 16px;
+  vertical-align: super;
+}
+
+.fahrenheit {
+  color: #3e3245;
+  text-decoration: none;
+}
+
+.fahrenheit:hover {
+  cursor: pointer;
+  color: #362999;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.celsius {
+  color: #3e3245;
+  text-decoration: none;
+}
+
+.celsius:hover {
+  cursor: pointer;
+  color: #362999;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.weather-info {
+  border: 3px #362999 solid;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 35px;
+}
+
+.date {
+  text-align: center;
+  border: 1px #362999 solid;
+}
+
+.forecast-title {
+  text-align: center;
+  padding: 15px;
+  color: #3e3245;
+  font-weight: 600;
+}
+
+.daily-forecast {
+  border: 3px #362999 solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.coder {
+  text-align: center;
+  color: #362999;
+  font-size: 13px;
+  padding-top: 30px;
+}
+
+.name-link {
+  text-decoration: none;
+  color: #362999;
+}
+
+.name-link:hover {
+  text-decoration: underline;
+}
+
+.clouds {
+  text-transform: capitalize;
+}

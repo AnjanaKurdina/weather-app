@@ -1,6 +1,6 @@
 .container {
-  margin: 40px auto;
-  padding: 40px 40px 10px 40px;
+  margin: 40px 40px 10px 40px;
+  padding: 40px;
   max-width: 1000px;
   background: radial-gradient(
     592px at 48.2% 50%,
@@ -109,10 +109,11 @@
 }
 
 .coder {
-  text-align: center;
+  text-align: left;
   color: #362999;
   font-size: 13px;
-  padding-top: 30px;
+  font-family: "PT Serif", serif;
+  margin-left: 40px;
 }
 
 .name-link {
@@ -121,6 +122,15 @@
 }
 
 .name-link:hover {
+  text-decoration: underline;
+}
+
+.git-hub-link {
+  text-decoration: none;
+  color: #362999;
+}
+
+.git-hub-link:hover {
   text-decoration: underline;
 }
 

@@ -10,10 +10,12 @@
   font-family: "PT Serif", serif;
   font-weight: 500;
   color: #3e3245;
+  border-radius: 4px;
 }
 
 .city-search {
   border: 3px #362999 solid;
+  border-radius: 6px;
   margin-bottom: 0;
   padding-top: 30px;
   padding-bottom: 10px;
@@ -39,7 +41,7 @@
 .city-temp {
   border: 3px #362999 solid;
   text-align: center;
-  border-radius: 80px;
+  border-radius: 90px;
   margin-bottom: 80px;
   padding-top: 30px;
   padding-bottom: 10px;
@@ -82,6 +84,7 @@
 
 .weather-info {
   border: 3px #362999 solid;
+  border-radius: 6px;
   margin-bottom: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -91,6 +94,7 @@
 .date {
   text-align: center;
   border: 1px #362999 solid;
+  border-radius: 4px;
 }
 
 .forecast-title {
@@ -102,6 +106,7 @@
 
 .daily-forecast {
   border: 3px #362999 solid;
+  border-radius: 6px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
@@ -118,7 +123,7 @@
 
 .name-link {
   text-decoration: none;
-  color: #362999;
+  
 }
 
 .name-link:hover {
@@ -127,13 +132,22 @@
 
 .git-hub-link {
   text-decoration: none;
-  color: #362999;
+  
 }
 
 .git-hub-link:hover {
   text-decoration: underline;
 }
 
+.netlify-link {
+  text-decoration: none;
+  
+}
+
+.netlify-link:hover {
+  text-decoration: underline;
+}
+
 .clouds {
   text-transform: capitalize;
-}
+

@@ -26,137 +26,139 @@
   </head>
   <body>
     <div class="container">
-      <div class="row weather-today">
-        <div class="col-3 city-search">
-          <form id="city-input">
-            <input
-              type="input"
-              placeholder="Enter City Name"
-              class="enter-search"
-              id="enter-search-input"
-              autofocus
-              autocomplete="off"
-            />
-            <br />
-            <button type="submit" class="btn btn-primary" id="search-btn">
-              City Search
+      <div class="weather-app">
+        <div class="row weather-today">
+          <div class="col-3 city-search">
+            <form id="city-input">
+              <input
+                type="input"
+                placeholder="Enter City Name"
+                class="enter-search"
+                id="enter-search-input"
+                autofocus
+                autocomplete="off"
+              />
+              <br />
+              <button type="submit" class="btn btn-primary" id="search-btn">
+                City Search
+              </button>
+            </form>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="current-location-btn"
+            >
+              Current Location
             </button>
-          </form>
-
-          <button
-            type="button"
-            class="btn btn-primary"
-            id="current-location-btn"
-          >
-            Current Location
-          </button>
-        </div>
-
-        <div class="col-1"></div>
-        <div class="col-4 city-temp">
-          <div class="city-chosen" id="current-city"></div>
-          <div>
-            <span class="temp-now" id="current-temp"></span>
-            <span class="units">
-              <a href="#" class="fahrenheit" id="fahrenheit-link">°F</a> / °C
-            </span>
           </div>
-          <div class="time" id="current-time"></div>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-3 weather-info">
-          <div class="date" id="current-date">
-            <strong></strong>
+
+          <div class="col-1"></div>
+          <div class="col-4 city-temp">
+            <div class="city-chosen" id="current-city"></div>
+            <div>
+              <span class="temp-now" id="current-temp"></span>
+              <span class="units">
+                <a href="#" class="fahrenheit" id="fahrenheit-link">°F</a> / °C
+              </span>
+            </div>
+            <div class="time" id="current-time"></div>
           </div>
-          <br />
-          Feels Like: <span id="feels-like"></span> °F
-          <br />
-          High/Low: <span id="high"></span>/<span id="low"></span> °F
-          <br />
-          <span id="clouds" class="clouds"></span>
-          <br />
-          Humidity: <span id="humidity"></span>%
-          <br />
-          Wind Speed: <span id="wind-speed"></span> mph
+          <div class="col-1"></div>
+          <div class="col-3 weather-info">
+            <div class="date" id="current-date">
+              <strong></strong>
+            </div>
+            <br />
+            Feels Like: <span id="feels-like"></span> °F
+            <br />
+            High/Low: <span id="high"></span>/<span id="low"></span> °F
+            <br />
+            <span id="clouds" class="clouds"></span>
+            <br />
+            Humidity: <span id="humidity"></span>%
+            <br />
+            Wind Speed: <span id="wind-speed"></span> mph
+          </div>
+        </div>
+        <h3 class="forecast-title">Daily Forecast</h3>
+        <div class="row daily-forecast">
+          <div class="col-2">
+            Today
+            <br />
+            🌤
+            <br />
+            80°/
+            <br />
+            70° F
+          </div>
+          <div class="col-2">
+            Monday
+            <br />
+            ☀
+            <br />
+            82°/
+            <br />
+            69° F
+          </div>
+          <div class="col-2">
+            Tuesday
+            <br />
+            ⛅
+            <br />
+            85°/
+            <br />
+            78° F
+          </div>
+          <div class="col-2">
+            Wednesday
+            <br />
+            ☀
+            <br />
+            90°/
+            <br />
+            80° F
+          </div>
+          <div class="col-2">
+            Thursday
+            <br />
+            ☁
+            <br />
+            86°/
+            <br />
+            74° F
+          </div>
+          <div class="col-2">
+            Friday
+            <br />
+            🌧
+            <br />
+            75°/
+            <br />
+            65° F
+          </div>
         </div>
       </div>
-      <h3 class="forecast-title">Daily Forecast</h3>
-      <div class="row daily-forecast">
-        <div class="col-2">
-          Today
-          <br />
-          🌤
-          <br />
-          80°/
-          <br />
-          70° F
-        </div>
-        <div class="col-2">
-          Monday
-          <br />
-          ☀
-          <br />
-          82°/
-          <br />
-          69° F
-        </div>
-        <div class="col-2">
-          Tuesday
-          <br />
-          ⛅
-          <br />
-          85°/
-          <br />
-          78° F
-        </div>
-        <div class="col-2">
-          Wednesday
-          <br />
-          ☀
-          <br />
-          90°/
-          <br />
-          80° F
-        </div>
-        <div class="col-2">
-          Thursday
-          <br />
-          ☁
-          <br />
-          86°/
-          <br />
-          74° F
-        </div>
-        <div class="col-2">
-          Friday
-          <br />
-          🌧
-          <br />
-          75°/
-          <br />
-          65° F
-        </div>
+      <div class="coder">
+        This project was coded by
+        <a
+          class="name-link"
+          href="https://www.linkedin.com/in/anjana-kurdina"
+          target="_blank"
+          ><em>Anjana Kurdina</em></a
+        >, open-source code on
+        <a
+          class="git-hub-link"
+          href="https://github.com/AnjanaKurdina/weather-app.git"
+          target="_blank"
+        >
+          GitHub</a
+        >
+        and hosted on
+        <a href="https://www.netlify.com/" class="netlify-link" target="_blank">
+          Netlify.
+        </a>
       </div>
-    </div>
-    <div class="coder">
-      This project was coded by
-      <a
-        class="name-link"
-        href="https://www.linkedin.com/in/anjana-kurdina"
-        target="_blank"
-        ><em>Anjana Kurdina</em></a
-      >, open-source code on
-      <a
-        class="git-hub-link"
-        href="https://github.com/AnjanaKurdina/weather-app.git"
-        target="_blank"
-      >
-        GitHub</a
-      >
-      and hosted by
-      <a href="https://www.netlify.com/" class="netlify-link" target="_blank">
-        Netlify.
-      </a>
     </div>
     <script src="src/script.js"></script>
   </body>

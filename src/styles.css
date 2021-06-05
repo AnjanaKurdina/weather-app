@@ -1,4 +1,4 @@
-.container {
+.weather-app {
   margin: 40px 40px 10px 40px;
   padding: 40px;
   max-width: 1000px;
@@ -12,6 +12,7 @@
   color: #3e3245;
   border-radius: 4px;
 }
+
 
 .city-search {
   border: 3px #362999 solid;
@@ -49,13 +50,14 @@
 }
 
 .temp-now {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 800;
 }
 
 .units {
   font-size: 16px;
-  vertical-align: super;
+  position: relative;
+  top: -12px
 }
 
 .fahrenheit {
@@ -81,6 +83,7 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
 
 .weather-info {
   border: 3px #362999 solid;

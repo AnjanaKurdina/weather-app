@@ -13,7 +13,6 @@
   border-radius: 4px;
 }
 
-
 .city-search {
   border: 3px #362999 solid;
   border-radius: 6px;
@@ -45,19 +44,20 @@
   border-radius: 90px;
   margin-bottom: 80px;
   padding-top: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-size: 27px;
 }
 
 .temp-now {
   font-size: 36px;
   font-weight: 800;
+  position: relative;
 }
 
 .units {
   font-size: 16px;
   position: relative;
-  top: -12px
+  top: -12px;
 }
 
 .fahrenheit {
@@ -84,7 +84,6 @@
   font-weight: bold;
 }
 
-
 .weather-info {
   border: 3px #362999 solid;
   border-radius: 6px;
@@ -94,10 +93,22 @@
   line-height: 35px;
 }
 
+.weather-info img {
+  width: 50px;
+  height: 50px;
+}
+
+.clouds {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 20px;
+}
+
 .date {
   text-align: center;
   border: 1px #362999 solid;
   border-radius: 4px;
+  margin-bottom: 15px;
 }
 
 .forecast-title {
@@ -126,7 +137,6 @@
 
 .name-link {
   text-decoration: none;
-  
 }
 
 .name-link:hover {
@@ -135,7 +145,6 @@
 
 .git-hub-link {
   text-decoration: none;
-  
 }
 
 .git-hub-link:hover {
@@ -144,13 +153,8 @@
 
 .netlify-link {
   text-decoration: none;
-  
 }
 
 .netlify-link:hover {
   text-decoration: underline;
 }
-
-.clouds {
-  text-transform: capitalize;
-

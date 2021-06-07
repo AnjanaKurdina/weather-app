@@ -88,6 +88,14 @@ function fahrenheitTemp(response) {
   );
   document.querySelector("#clouds").innerHTML =
     response.data.weather[0].description;
+
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );

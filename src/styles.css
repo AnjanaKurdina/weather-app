@@ -60,28 +60,14 @@
   top: -12px;
 }
 
-.fahrenheit {
+.units .active {
   color: #3e3245;
+  cursor: default;
   text-decoration: none;
 }
 
-.fahrenheit:hover {
-  cursor: pointer;
-  color: #362999;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.celsius {
-  color: #3e3245;
+.units .active:hover {
   text-decoration: none;
-}
-
-.celsius:hover {
-  cursor: pointer;
-  color: #362999;
-  text-decoration: underline;
-  font-weight: bold;
 }
 
 .weather-info {

@@ -70,6 +70,14 @@
   text-decoration: none;
 }
 
+.units .celsius {
+  text-decoration: none;
+}
+
+.units .fahrenheit {
+  text-decoration: none;
+}
+
 .weather-info {
   border: 3px #362999 solid;
   border-radius: 6px;

@@ -40,15 +40,6 @@ function currentTime(now) {
   return formatAMPM;
 }
 
-let now = new Date();
-let currentDate = document.querySelector("#current-date");
-let time = document.querySelector("#current-time");
-currentDate.innerHTML = formatedDate(now);
-time.innerHTML = currentTime(now);
-
-let searchCity = document.querySelector("#city-input");
-searchCity.addEventListener("submit", handleSubmit);
-
 function search(cityEntered) {
   let apiKey = "8881b33e91641557db17feae97031d9c";
   let units = "imperial";
@@ -71,23 +62,28 @@ function handleSubmit(event) {
 
 function fahrenheitTemp(response) {
   fahrenheitTemperature = response.data.main.temp;
+  feelsLikeTemperature = response.data.main.feels_like;
+  highTemperature = response.data.main.temp_max;
+  lowTemperature = response.data.main.temp_min;
 
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = Math.round(
     fahrenheitTemperature
   );
-  document.querySelector("#high").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#low").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
+
+  document.querySelector("#high").innerHTML = Math.round(highTemperature);
+
+  let lowTemp = document.querySelector("#low");
+  let low = Math.round(lowTemperature);
+  lowTemp.innerHTML = `${low} °F`;
+
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
-  document.querySelector("#feels-like").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
+  let feelsLike = document.querySelector("#feels-like");
+  let feels = Math.round(feelsLikeTemperature);
+  feelsLike.innerHTML = `${feels} °F`;
+
   document.querySelector("#clouds").innerHTML =
     response.data.weather[0].description;
 
@@ -117,16 +113,25 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(currentLocation);
 }
 
-let currentLocationBtn = document.querySelector("#current-location-btn");
-currentLocationBtn.addEventListener("click", getPosition);
-
 function showCelsiusTemp(event) {
   event.preventDefault();
   celsius = document.querySelector("#current-temp");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+
   let celsiusTemp = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
   celsius.innerHTML = celsiusTemp;
+
+  let feelsLikeC = document.querySelector("#feels-like");
+  let feels = Math.round(((feelsLikeTemperature - 32) * 5) / 9);
+  feelsLikeC.innerHTML = `${feels} °C`;
+
+  let highTempC = document.querySelector("#high");
+  highTempC.innerHTML = Math.round(((highTemperature - 32) * 5) / 9);
+
+  let lowTempC = document.querySelector("#low");
+  let low = Math.round(((lowTemperature - 32) * 5) / 9);
+  lowTempC.innerHTML = `${low} °C`;
 }
 
 function showfahrenheitTemp(event) {
@@ -135,7 +140,30 @@ function showfahrenheitTemp(event) {
   celsiusLink.classList.remove("active");
   let fahrenheit = document.querySelector("#current-temp");
   fahrenheit.innerHTML = Math.round(fahrenheitTemperature);
+
+  let feelsLike = document.querySelector("#feels-like");
+  let feels = Math.round(feelsLikeTemperature);
+  feelsLike.innerHTML = `${feels} °F`;
+
+  let lowTemp = document.querySelector("#low");
+  let low = Math.round(lowTemperature);
+  lowTemp.innerHTML = `${low} °F`;
+
+  let highTemp = document.querySelector("#high");
+  highTemp.innerHTML = Math.round(highTemperature);
 }
+
+let now = new Date();
+let currentDate = document.querySelector("#current-date");
+let time = document.querySelector("#current-time");
+currentDate.innerHTML = formatedDate(now);
+time.innerHTML = currentTime(now);
+
+let searchCity = document.querySelector("#city-input");
+searchCity.addEventListener("submit", handleSubmit);
+
+let currentLocationBtn = document.querySelector("#current-location-btn");
+currentLocationBtn.addEventListener("click", getPosition);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
@@ -144,5 +172,8 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showfahrenheitTemp);
 
 let fahrenheitTemperature = null;
+let feelsLikeTemperature = null;
+let highTemperature = null;
+let lowTemperature = null;
 
 search("New York");

@@ -1,3 +1,12 @@
+body {
+  background: linear-gradient(
+    243deg,
+    rgb(255, 253, 221) 13.4%,
+    rgb(248, 215, 215) 82.1%
+  );
+  margin: 100px 100px 200px 100px;
+}
+
 .weather-app {
   margin: 40px 40px 10px 40px;
   padding: 40px;
@@ -11,6 +20,7 @@
   font-weight: 500;
   color: #3e3245;
   border-radius: 4px;
+  box-shadow: 5px 5px 7px rgb(65 50 100 / 8%);
 }
 
 .city-search {

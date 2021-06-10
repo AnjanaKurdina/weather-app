@@ -147,18 +147,10 @@ body {
   text-decoration: underline;
 }
 
-.git-hub-link {
+.hub-link {
   text-decoration: none;
 }
 
-.git-hub-link:hover {
-  text-decoration: underline;
-}
-
-.netlify-link {
-  text-decoration: none;
-}
-
-.netlify-link:hover {
+.link:hover {
   text-decoration: underline;
 }

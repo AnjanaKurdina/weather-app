@@ -91,7 +91,7 @@ function fahrenheitTemp(response) {
 
   document
     .querySelector("#icon")
-    .setAttribute("src", `http://openweathermap.org/img/wn/${iconId}@2x.png`);
+    .setAttribute("src", `images/weather-icons/${iconId}.png`);
 
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed

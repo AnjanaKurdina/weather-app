@@ -29,6 +29,33 @@ function formatedDate(now) {
   return `${day}, ${month} ${date}, ${year}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+      ${day}
+      <br />
+      <img src="images/weather-icons/01d.png" alt="icon" width="38" id="forecast-icon" />
+      <div>
+        <span class="forecast-temp-max">80</span>°/
+      </div>
+      <div>
+        <span class="forecast-temp-min">70</span>° F
+      </div>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function currentTime(now) {
   let hours = now.getHours();
   let minutes = now.getMinutes();
@@ -174,5 +201,7 @@ let fahrenheitTemperature = null;
 let feelsLikeTemperature = null;
 let highTemperature = null;
 let lowTemperature = null;
+
+displayForecast();
 
 search("New York");

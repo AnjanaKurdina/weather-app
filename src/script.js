@@ -29,7 +29,26 @@ function formatedDate(now) {
   return `${day}, ${month} ${date}, ${year}`;
 }
 
-function displayForecast() {
+function currentTime(now) {
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let ampm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  let formatAMPM = `${hours}:${minutes}${ampm}`;
+  return formatAMPM;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "8881b33e91641557db17feae97031d9c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
@@ -54,17 +73,6 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}
-
-function currentTime(now) {
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let ampm = hours >= 12 ? "pm" : "am";
-  hours = hours % 12;
-  hours = hours ? hours : 12;
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  let formatAMPM = `${hours}:${minutes}${ampm}`;
-  return formatAMPM;
 }
 
 function search(cityEntered) {
@@ -123,6 +131,8 @@ function fahrenheitTemp(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  getForecast(response.data.coord);
 }
 
 function currentLocation(position) {
@@ -201,7 +211,5 @@ let fahrenheitTemperature = null;
 let feelsLikeTemperature = null;
 let highTemperature = null;
 let lowTemperature = null;
-
-displayForecast();
 
 search("New York");

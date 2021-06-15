@@ -83,10 +83,10 @@ function displayForecast(response) {
       <br />
       <img src="images/weather-icons/${iconId}.png" alt="icon" width="38"/>
       <div>
-        <span class="forecast-temp-max">${max}</span>°/
+        ${max}°/
       </div>
       <div>
-        <span class="forecast-temp-min">${min}</span>° F
+        ${min}° F
       </div>
     </div>`;
     }

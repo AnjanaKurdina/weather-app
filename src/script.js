@@ -65,8 +65,6 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  console.log(forecast);
-
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -83,10 +81,7 @@ function displayForecast(response) {
       <br />
       <img src="images/weather-icons/${iconId}.png" alt="icon" width="38"/>
       <div>
-        ${max}°/
-      </div>
-      <div>
-        ${min}° F
+        <span id="max-forecast"><strong>${max}</strong></span>° / <span id="min-forecast">${min}</span>° F
       </div>
     </div>`;
     }
@@ -208,6 +203,9 @@ function showfahrenheitTemp(event) {
 
   let highTemp = document.querySelector("#high");
   highTemp.innerHTML = Math.round(highTemperature);
+
+  let maxForecast = document.querySelector("#max-forecast");
+  maxForecast.innerHTML = Math.round(max);
 }
 
 let now = new Date();

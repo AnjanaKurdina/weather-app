@@ -4,7 +4,10 @@ body {
     rgb(255, 253, 221) 13.4%,
     rgb(248, 215, 215) 82.1%
   );
-  margin: 100px 100px 200px 100px;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin: 100px 0 0 0;
+  background-attachment: fixed;
 }
 
 .weather-app {
@@ -147,7 +150,7 @@ body {
   text-decoration: underline;
 }
 
-.hub-link {
+.link {
   text-decoration: none;
 }
 

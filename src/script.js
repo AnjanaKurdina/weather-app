@@ -40,35 +40,56 @@ function currentTime(now) {
   return formatAMPM;
 }
 
+function formatedForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function getForecast(coordinates) {
   let apiKey = "8881b33e91641557db17feae97031d9c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  console.log(forecast);
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      let max = Math.round(forecastDay.temp.max);
+      let min = Math.round(forecastDay.temp.min);
+      let iconId = forecastDay.weather[0].icon;
+      let day = formatedForecastDate(forecastDay.dt);
+
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
       ${day}
       <br />
-      <img src="images/weather-icons/01d.png" alt="icon" width="38" id="forecast-icon" />
+      <img src="images/weather-icons/${iconId}.png" alt="icon" width="38"/>
       <div>
-        <span class="forecast-temp-max">80</span>°/
+        <span class="forecast-temp-max">${max}</span>°/
       </div>
       <div>
-        <span class="forecast-temp-min">70</span>° F
+        <span class="forecast-temp-min">${min}</span>° F
       </div>
     </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

@@ -203,9 +203,6 @@ function showfahrenheitTemp(event) {
 
   let highTemp = document.querySelector("#high");
   highTemp.innerHTML = Math.round(highTemperature);
-
-  let maxForecast = document.querySelector("#max-forecast");
-  maxForecast.innerHTML = Math.round(max);
 }
 
 let now = new Date();

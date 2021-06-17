@@ -10,6 +10,11 @@ body {
   background-attachment: fixed;
 }
 
+.app {
+  display: block;
+  margin: 0 auto;
+}
+
 .weather-app {
   margin: 40px 40px 10px 40px;
   padding: 40px;
